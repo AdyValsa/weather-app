@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>WeatherALV</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="styleGiver"
+      class="container bg-light text-black text-center border border-dark border-opacity-25"
+    >
+      <div><h1 id="titolo">Weather forecast</h1></div>
+      <div id="weatherRow" class="row align-items-center">
+        <div class="col-1"></div>
+        <div class="col-4">
+          <ul>
+            <li class="list-group-item text-start">
+              <span id="timeDisplay"></span><em><span id="localTime"> </span></li></em>
+            </li>
+            <li id="humidityDisplay" class="list-group-item text-start">
+            </li>
+            <li id="windDisplay" class="list-group-item text-start">
+            </li>
+            <li id="weatherConditions" class="list-group-item text-start">
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <img
+            id="iconToday"
+            alt="Icon"
+          />
+        </div>
+        <div id="temperatureDiv" class="col-1 text-start temperatureDiv">
+          <span id="show-temp"></span> 
+        </div>
+          <div id="unitsDiv" class="col-3 text-start"><span id="unitSymbols"> <a href="#" id="celsius-link" onmouseover=displayTemperatureCelsius() class="text-light ">°C</a> | 
+            <a href="#" id="farenheit-link" onmouseover=displayTemperatureFarenheit() class="link-secondary">°F</a></span>
+        </div>
+      </div>
+      <div id="searchFormDiv">
+        <form id="search-city">
+          <label for="city"> Show me the weather in </label>
+          <input
+            type="search"
+            name="searchterms"
+            placeholder="Enter city"
+            autofocus="on"
+            id="SearchTxt"
+          />
+          <input
+            type="submit"
+            value="GO"
+            class=""
+            id="cityButton"
+          />
+        </form>
+      </div>
+      <div id="currentPositionDiv">
+        <input
+          class=""
+          id="currentPosition"
+          type="button"
+          value="Current position"
+        />
+      </div>
+      <h3>Forecast for the next 5 days</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-2" id="day1">
+            <p id="day1day"></p>
+            <img src="" id="day1Icon" class="secondaryIcon">
+            <br />
+            max <span id="day1Max"></span>°
+            <br />
+            min <span id="day1Min"></span>°
+            <br />
+          </div>
+          <div class="col-2" id="day2">
+            <p id="day2day"></p>
+            <img src="" id="day2Icon" class="secondaryIcon">
+            <br />
+            max <span id="day2Max"></span>°
+            <br />
+            min <span id="day2Min"></span>°
+            <br />
+          </div>
+          <div class="col-2" id="day3">
+            <p id="day3day"></p>
+            <img src="" id="day3Icon" class="secondaryIcon">
+            <br />
+            max <span id="day3Max"></span>°
+            <br />
+            min <span id="day3Min"></span>°
+            <br />
+          </div>
+          <div class="col-2" id="day4">
+            <p id="day4day"></p>
+            <img src="" id="day4Icon" class="secondaryIcon">
+            <br />
+            max <span id="day4Max"></span>°
+            <br />
+            min <span id="day4Min"></span>°
+            <br />
+          </div>
+          <div class="col-2" id="day5">
+            <p id="day5day"></p>
+            <img src="" id="day5Icon" class="secondaryIcon">
+            <br />
+            max <span id="day5Max"></span>°
+            <br />
+            min <span id="day5Min"></span>°
+            <br />
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+      <div class="text-start" id="githubLink">
+        <a
+          id="linkGithub"
+          href="https://github.com/AdyValsa"
+          alt="Link to my GitHub repository"
+          class="link-secondary"
+          >Link to my GitHub repository</a
+        >
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
